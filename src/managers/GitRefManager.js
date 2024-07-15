@@ -1,5 +1,4 @@
 // This is a convenience wrapper for reading and writing files in the 'refs' directory.
-import AsyncLock from 'async-lock'
 
 import { InvalidOidError } from '../errors/InvalidOidError.js'
 import { NoRefspecError } from '../errors/NoRefspecError.js'
@@ -10,6 +9,8 @@ import { compareRefNames } from '../utils/compareRefNames.js'
 import { join } from '../utils/join.js'
 
 import { GitConfigManager } from './GitConfigManager'
+
+import AsyncLock from 'async-lock'
 
 // @see https://git-scm.com/docs/git-rev-parse.html#_specifying_revisions
 const refpaths = ref => [

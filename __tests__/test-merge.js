@@ -1,9 +1,10 @@
-/* eslint-env node, browser, jasmine */
-const diff3Merge = require('diff3')
 const { Errors, merge, add, resolveRef, log } = require('isomorphic-git')
 const gitCommit = require('isomorphic-git').commit
 
 const { makeFixture } = require('./__helpers__/FixtureFS.js')
+
+/* eslint-env node, browser, jasmine */
+const diff3Merge = require('diff3')
 
 describe('merge', () => {
   it('prevent merge if index has unmerged paths', async () => {
