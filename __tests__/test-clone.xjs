@@ -22,7 +22,7 @@ describe('clone', () => {
   // so I'm enabling it.
   // Update: well, it's now slow enough on Edge that it's failing. Which is odd bc
   // it's the New Edge with is Chromium-based.
-  ;(process.browser ? xit : it)('clone with noTags', async () => {
+  ; (process.browser ? xit : it)('clone with noTags', async () => {
     const { fs, dir, gitdir } = await makeFixture('isomorphic-git')
     await clone({
       fs,
@@ -534,6 +534,6 @@ describe('clone', () => {
       expect(connectionLog.length).not.toBe(0)
       expect(connectionLog[0]).toEqual('GET github.com:443')
       expect(connectionLog[1]).toEqual('POST github.com:443')
-    })
+    }, 100000)
   }
 })
