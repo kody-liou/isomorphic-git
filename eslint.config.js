@@ -1,9 +1,7 @@
 import eslintConfigPrettier from "eslint-config-prettier";
-import eslintPluginImport from "eslint-plugin-import";
 
 export default [
   eslintConfigPrettier,
-  eslintPluginImport,
   {
     ignores: [
       '/dist/', '*.mjs',
@@ -21,18 +19,7 @@ export default [
       '/internal-apis.umd.min.js',
       '/junit',
     ],
-    rules: {
-      'import/order': [
-        'error',
-        {
-          alphabetize: {
-            order: 'asc',
-            caseInsensitive: false,
-          },
-          groups: ['builtin', 'external', 'parent', 'index', 'sibling'],
-          'newlines-between': 'always',
-        },
-      ],
-    },
   },
 ];
+
+// TODO: Make website folder use the rule which is for React.js jsx

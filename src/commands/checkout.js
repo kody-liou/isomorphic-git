@@ -492,12 +492,12 @@ async function analyze({
             }
           }
         }
-        /* eslint-disable no-fallthrough */
+         
         // File missing from workdir
         case '110':
         // Possibly modified entries
         case '111': {
-          /* eslint-enable no-fallthrough */
+           
           switch (`${await stage.type()}-${await commit.type()}`) {
             case 'tree-tree': {
               return
