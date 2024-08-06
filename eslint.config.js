@@ -1,23 +1,12 @@
-import prettierStandard from 'eslint-config-prettier-standard';
+import eslintConfigPrettier from "eslint-config-prettier";
+import eslintPluginImport from "eslint-plugin-import";
 
 export default [
-  prettierStandard,
+  eslintConfigPrettier,
+  eslintPluginImport,
   {
-    ignorePatterns: ['/dist/', '*.mjs'],
-    rules: {
-      'import/order': [
-        'error',
-        {
-          alphabetize: {
-            order: 'asc',
-            caseInsensitive: false,
-          },
-          groups: ['builtin', 'external', 'parent', 'index', 'sibling'],
-          'newlines-between': 'always',
-        },
-      ],
-    },
     ignores: [
+      '/dist/', '*.mjs',
       '/__tests__/__fixtures__',
       '/docs',
       '/node_modules',
@@ -32,5 +21,18 @@ export default [
       '/internal-apis.umd.min.js',
       '/junit',
     ],
+    rules: {
+      'import/order': [
+        'error',
+        {
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: false,
+          },
+          groups: ['builtin', 'external', 'parent', 'index', 'sibling'],
+          'newlines-between': 'always',
+        },
+      ],
+    },
   },
 ];
