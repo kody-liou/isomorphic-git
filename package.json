@@ -18,6 +18,7 @@
     "start": "nps",
     "format": "nps format",
     "build": "nps build",
+    "prepare": "nps build",
     "test": "nps test",
     "publish-website": "nps website",
     "prepublishOnly": "nps prepublish",
